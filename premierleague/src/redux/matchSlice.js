@@ -6,7 +6,11 @@ const API_URL = 'https://api.sofascore.com/api/v1/sport/football/scheduled-event
 export const fetchMatches = createAsyncThunk('matches/fetchMatches', async () => {
   try {
     const response = await axios.get(API_URL);
-    return response.data.events;
+    // Filter matches for Premier League Matchday 33
+    const filteredMatches = response.data.events.filter(match => {
+      return match.tournament.name === 'Premier League' && match.roundInfo.round === 33;
+    });
+    return filteredMatches;
   } catch (error) {
     throw Error('Failed to fetch matches from the API');
   }
