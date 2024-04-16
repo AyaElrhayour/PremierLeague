@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMatches } from '../redux/matchSlice';
-import MatchDetails from './MatchDetails'; // Importing MatchDetails component
+import MatchDetails from './MatchDetails'; 
 
 const MatchList = () => {
   const dispatch = useDispatch();
@@ -61,7 +61,7 @@ const MatchList = () => {
               </div>
           ))}
         </div>
-        {selectedMatch && <MatchDetails match={selectedMatch} />} {/* Conditionally render MatchDetails */}
+        {selectedMatch && <MatchDetails match={selectedMatch} />} 
         <div className="flex justify-center mt-8">
           <nav className="relative z-0 inline-flex shadow-sm -space-x-px" aria-label="Pagination">
             <button

@@ -53,9 +53,10 @@ const MatchDetails = ({ match }) => {
                     {match.winnerCode === 1
                         ? match.homeTeam.name
                         : match.winnerCode === 2
-                            ? 'Draw'
-                            : match.awayTeam.name}
+                            ? match.awayTeam.name
+                            : 'Draw'}
                 </p>
+
             </div>
         </div>
     );
